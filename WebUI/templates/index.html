@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+     <link rel="stylesheet" href="{{ url_for('static', filename='css/index.css') }}">
+</head>
+<body>
+ <header>
+        <h1>FontYourself&nbsp;您的艺术字设计工具</h1>
+    </header>
+  <h1 style="text-align: center;">关于我们</h1>
+    <div class="section1">
+
+        <div class="s1">
+            <img src="../static/css/5.jpg"  width="800px" height="480px">
+        </div>
+        <div class="s2">
+            <br>
+FontYourself可以自由定制您创意的艺术字体！
+FontYourself由杜雨泽（上海星河湾高中）开发，使用CNN和Stable Diffusion等AI技术，希望能帮助实现用户关于字体的艺术创作。
+关于本工具的任何建议，请通过下面的联系方式联系作者。
+        </div>
+
+    </div>
+   <h1 style="text-align: center;">如何使用</h1>
+    <div class="section2">
+
+<div class="s2">
+  FontYourself的两种用法：</br>
+1.	输入一张图和一个字，输出图片风格的字。</br>
+2.	输入一个字和一段效果描述，输出符合效果的字。
+        </div>
+    </div>
+ <h1 style="text-align: center;">开始使用</h1>
+ <div class="section3">
+
+     <div class="color1">
+
+     <div class="b1">
+ <h1>使用场景一</h1>
+<h2>1.请输入图片</h2>
+    <!--上传文件必须加enctype="multipart/form-data-->
+    <form action="/" method="post" enctype="multipart/form-data">
+        <input style="font-size: 24px; font-weight: bold;" type="file" name="image" accept="image/*">
+        <br>
+        <h2>2.请输入您要设计的字</h2>
+        <textarea cols="50" rows="2" name="textarea"></textarea>
+        <br>
+<!--        <input type="reset"  name="reset" value="重置">-->
+        <h2>3.请点击按钮，生成您的艺术字</h2>
+       <input style="font-size: 24px; " type="submit"  name="submit" value="生成艺术字">
+    </form>
+    <div id="a">{{aaa}}</div>
+         </div>
+     <div class="b2">
+<!--    <img src="{{ url_for('static', filename=image_path ) }}" alt="处理后的图片">-->
+   <img src="{{ url_for('static', filename='33.jpeg' ) }}" alt="处理后的图片">
+    <br>
+    {% if image_path %}
+    <a href="{{ url_for('static', filename=image_path) }} " download>点击下载生成的图片</a>
+    {% endif %}
+         </div>
+         </div>
+     <div style="clear:both"></div>
+      <div class="color2">
+     <div class="b1">
+ <h1>使用场景二</h1>
+         <h2>1.请输入您要设计的字</h2>
+    <!--上传文件必须加enctype="multipart/form-data-->
+    <form action="/" method="post" enctype="multipart/form-data">
+        <textarea cols="50" rows="2" name="textarea"></textarea>
+        <br>
+        <h2>2.请描述您希望的字体效果</h2>
+        <textarea cols="50" rows="10" name="textarea"></textarea>
+        <input type="reset"  name="reset" value="重置">
+        <input type="submit"  name="submit" value="上传">
+    </form>
+<!--    <div id="a">{{aaa}}</div>-->
+         </div>
+     <div class="b2">
+    <h2>3.请点击按钮，生成您的艺术字</h2>
+    <input style="font-size: 24px; " type="submit"  name="submit" value="生成艺术字">
+         <br>
+<!--          <img src="{{ url_for('static', filename=image_path ) }}" alt="处理后的图片">-->
+    <img src="{{ url_for('static', filename='33.jpeg' ) }}" alt="处理后的图片">
+    <br>
+    {% if image_path %}
+    <a href="{{ url_for('static', filename=image_path) }} " download>点击下载生成的图片</a>
+    {% endif %}
+</div>
+</div>
+   </div>
+ <h1 style="text-align: center;">联系作者</h1>
+<div class="section4">
+<div id="end">qq:2415581056
+    <br>
+    ins:greg0ndyz
+     <br>
+    邮箱:dennis_dyz@126.com
+</div>
+    </div>
+</body>
+</html>
