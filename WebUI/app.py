@@ -32,7 +32,7 @@ def upload_and_process():
         elif image:
             filename1 = secure_filename(image.filename)
             print(filename1)
-            filename11="C:/Users/86136/Desktop/暑期项目/文字和图像/pythonProject/static/"+filename1
+            filename11="/static/"+filename1
             print(filename11)
             # 保存上传的图片到本地
             image.save(os.path.join('static', filename1))
